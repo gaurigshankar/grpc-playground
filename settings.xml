@@ -1,0 +1,41 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <mirrors>
+        <mirror>
+            <id>centralmirror</id>
+            <mirrorOf>maven_central</mirrorOf>
+            <name>Apache maven central mirror Spain</name>
+            <url>http://downloads.centralmirror.com/public/maven</url>
+
+        </mirror>
+    </mirrors>
+    <activeProfiles>
+        <activeProfile>central</activeProfile>
+    </activeProfiles>
+    <profiles>
+        <profile>
+            <id>central</id>
+            <repositories>
+                <repository>
+                    <id>codehausSnapshots</id>
+                    <name>Codehaus Snapshots</name>
+                    <releases>
+                        <enabled>false</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </snapshots>
+                    <url>http://snapshots.maven.codehaus.org/maven2</url>
+                    <layout>default</layout>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+</settings>
